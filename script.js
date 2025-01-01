@@ -108,9 +108,9 @@ document.addEventListener("click", async (e)=>{
             ctx.translate(-w/2, -h/2);
             var curvecx = w/2+curveWidth/2;
             if(angle%(Math.PI/2)>=Math.PI/4){
-                var height = (Math.PI/4-angle%(Math.PI/4))*4/Math.PI*curveWidth/5+20
+                var height = (Math.PI/4-angle%(Math.PI/4))*4/Math.PI*curveWidth/5+20;
             }else{
-                var height = (angle%(Math.PI/4))*4/Math.PI*curveWidth/5+20
+                var height = (angle%(Math.PI/4))*4/Math.PI*curveWidth/5+20;
             }
             ctx.beginPath();
             ctx.fillStyle="rgba(255, 255, 255, 0.7)";
