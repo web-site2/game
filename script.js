@@ -108,16 +108,16 @@ document.addEventListener("click", async (e)=>{
             ctx.translate(-w/2, -h/2);
             var curvecx = w/2+curveWidth/2;
             if(angle%(Math.PI/2)>=Math.PI/4){
-                var height = (Math.PI/4-angle%(Math.PI/4))*4/Math.PI*curveWidth/5+20;
+                var height = (Math.PI/4-angle%(Math.PI/4))*4/Math.PI*curveWidth/4;
             }else{
-                var height = (angle%(Math.PI/4))*4/Math.PI*curveWidth/5+20;
+                var height = (angle%(Math.PI/4))*4/Math.PI*curveWidth/4;
             }
             ctx.beginPath();
             ctx.fillStyle="rgba(255, 255, 255, 0.7)";
             ctx.arc(curveWidth+w/2, h/2, data[ch][2], 0, 2*Math.PI);
             ctx.fill();
             ctx.beginPath();
-            ctx.ellipse(curvecx, h/2, curveWidth/2, height, 0, 0, Math.PI, true);
+            ctx.ellipse(curvecx, h/2, curveWidth/2, height, 0, angle%Math.PI > Math.PI/2 ? Math.PI : 0, angle%Math.PI > Math.PI/2 ? 2*Math.PI : Math.PI, true);
             ctx.restore();
             ctx.lineWidth = 20;
             ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
